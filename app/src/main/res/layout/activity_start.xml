@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_dark"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_alpha" />
+
+    <LinearLayout
+        android:id="@+id/SliderDots"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginTop="120dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnToSignUp"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="70dp"
+        android:layout_weight="1"
+        android:background="@drawable/buttonlogin"
+        android:text="SIGN UP FREE"
+        android:textColor="#5d5e66"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SliderDots" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Already a user?"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnToSignUp" />
+
+    <Button
+        android:id="@+id/btnToLogin"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="3dp"
+        android:layout_weight="1"
+        android:background="@drawable/buttontologin"
+        android:text="LOG IN"
+        android:textColor="#d284b8"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+</android.support.constraint.ConstraintLayout>

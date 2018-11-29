@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="lecture">
+        <item>김영천</item>
+        <item>장재우</item>
+        <item>황지원</item>
+        <item>안동언</item>
+        <item>곽영태</item>
+        <item>조희승</item>
+        <item>홍득조</item>
+        <item>안계현</item>
+    </string-array>
+
+    <string-array name="selection">
+        <item>제목</item>
+        <item>아이디</item>
+    </string-array>
+
+</resources>
