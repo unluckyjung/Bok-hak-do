@@ -44,7 +44,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap; //구글 맵 객체가 들어옴
 
         // Add a marker in Sydney and move the camera
-        LatLng jbnu = new LatLng(35.8441821, 127.12927769999999);
+        LatLng jbnu = new LatLng(35.8468552, 127.1296769);
         //LatLng는 위, 경도를 표현하는 객체. 구글 라이브러리 사용한것.
         mMap.addMarker(new MarkerOptions().position(jbnu).title("전북대학교")); //JBNU에 마커박고. "전북대학교" 띄움
         mMap.moveCamera(CameraUpdateFactory.newLatLng(jbnu)); //JBNU위치로 카메라를 이동
