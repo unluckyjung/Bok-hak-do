@@ -17,7 +17,6 @@ import static android.widget.Toast.LENGTH_SHORT;
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
-    private Button btnLogout;
     private LinearLayout linearlayout1, linearlayout2, linearlayout3;
     private long pressedTime = 0;
 
@@ -29,14 +28,6 @@ public class MainActivity extends AppCompatActivity {
         linearlayout1 = (LinearLayout)findViewById(R.id.linearLayout1);
         linearlayout2 = (LinearLayout)findViewById(R.id.linearLayout2);
         linearlayout3 = (LinearLayout)findViewById(R.id.linearLayout3);
-        btnLogout = (Button) findViewById(R.id.btnLogout);
-
-        btnLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Logout();
-            }
-        });
 
         firebaseAuth = FirebaseAuth.getInstance();
 
