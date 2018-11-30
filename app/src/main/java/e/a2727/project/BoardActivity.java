@@ -22,8 +22,8 @@ public class BoardActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Calender class 구현 시 풀어주세요
-//                startActivity(new Intent(BoardActivity.this, CalenderActivity.class));
-//                finish();
+                startActivity(new Intent(BoardActivity.this, CalenderActivity.class));
+                finish();
             }
         });
 

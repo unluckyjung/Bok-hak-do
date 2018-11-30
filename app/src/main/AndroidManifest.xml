@@ -12,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <meta-data android:name="com.google.android.geo.API_KEY" android:value="@string/google_maps_key" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
         <activity android:name=".WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,13 +23,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BoardActivity"></activity>
-        <activity android:name=".GangUiActivity" android:windowSoftInputMode="adjustNothing" />
+        <activity android:name=".BoardActivity" />
+        <activity
+            android:name=".GangUiActivity"
+            android:windowSoftInputMode="adjustNothing" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".StartActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".MapsActivity" android:label="Map"></activity>
+        <activity
+            android:name=".MapsActivity"
+            android:label="Map" />
+        <activity android:name=".CalenderActivity"></activity>
     </application>
 
 </manifest>
