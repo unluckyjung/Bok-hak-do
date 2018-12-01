@@ -69,6 +69,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             public void onSuccess(Location location) {
                 if (location != null){ //Location이 Null일 수 도 있기때문에 체크가 필요함.
                     LatLng myLocation = new LatLng(location.getLatitude(), location.getLongitude()); //location에 위도, 경도가 들어가있음.
+                    mMap.clear(); //마커가 중복으로 찍히는것을 방지하기위해서 이전의 모든 마커를 삭제함.
                     mMap.addMarker(new MarkerOptions() //맵에 표시를 하기위해서 마커 박음
                             .position(myLocation)
                             .title("나의 현재 위치"));
