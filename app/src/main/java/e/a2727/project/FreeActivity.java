@@ -96,5 +96,11 @@ public class FreeActivity extends BaseActivity {
         }
     }
 
+    //뒤로가기 하면 바로꺼지길래 뒤로가기 넣어둠
+    public void onBackPressed() {
+        startActivity(new Intent(FreeActivity.this, BoardActivity.class));
+        finish();
+    }
+
 
 }
