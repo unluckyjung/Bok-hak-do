@@ -38,9 +38,9 @@ public class BoardActivity extends AppCompatActivity {
         linearlayout2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //자유 게시판 class 구현 시 풀어주세요
-//                startActivity(new Intent(BoardActivity.this, FreeActivity.class));
-//                finish();
+                //자유 게시판 class 구현 해서 풀음. 별건 아님
+                startActivity(new Intent(BoardActivity.this, FreeActivity.class));
+                finish();
             }
         });
 

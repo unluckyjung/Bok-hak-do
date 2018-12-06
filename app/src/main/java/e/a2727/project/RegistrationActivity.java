@@ -16,6 +16,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 //이 부분은 딱히 신경 안 써도 됨. 그냥 길이 짧게 보여줄라 함
 import static android.widget.Toast.LENGTH_SHORT;
@@ -61,9 +63,9 @@ public class RegistrationActivity extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //입력값 가져옴
-                String email = userEmail.getText().toString();
-                String username = userName.getText().toString();
+                //입력값 가져옴 - final로 변경하여 User data 전송 시 사용
+                final String email = userEmail.getText().toString();
+                final String username = userName.getText().toString();
                 String password = userPassword.getText().toString();
 
                 //만약 전부 비어있으면? 하고 작동함. 위에 길이 설정 하고 싶으면 하셈
@@ -79,6 +81,7 @@ public class RegistrationActivity extends AppCompatActivity {
                                         // Sign in success, update UI with the signed-in user's information
                                         Toast.makeText(RegistrationActivity.this, "Authentication Successful.",LENGTH_SHORT).show();
                                         sendEmailVerification(); //이메일 인증메일 전송과 함께 여기서 초기 창으로 넘어가게 해야함. why? 여기다 하면 바로 로그인되버림
+                                        sendUserData(email, username);
                                         mAuth.signOut(); //바로 로그인 상태로 되므로 로그아웃 시켜줘야함
                                     } else {
                                         // If sign in fails, display a message to the user.
@@ -123,6 +126,21 @@ public class RegistrationActivity extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    //현재 이 부분 수정함. 각각의 유저 데이터를 따로 저장하여 게시판 사용 시 이용케 하려고 조금 변경함
+    private void sendUserData(String email, String Name){
+        //Firebase의 현재 instance 값 가져옴
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        //물론 유저가 누군지도 알아야 함
+        FirebaseUser firebaseUser = mAuth.getCurrentUser();
+        //DatabaseReference myRef = firebaseDatabase.getReference(mAuth.getUid());
+        //현재 참조하고 있는 데이터베이스를 가져옴
+        DatabaseReference myRef = firebaseDatabase.getReference();
+        //Userprofile에서 선언한 것과 같이 email과 유저 이름 준비
+        UserProfile userProfile = new UserProfile(email, Name);
+        //이후 데이터베이스에 아래의 경로와 같이 갖다 넣음
+        myRef.child("users").child(firebaseUser.getUid()).setValue(userProfile);
     }
 
 }
