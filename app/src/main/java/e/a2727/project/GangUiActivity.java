@@ -23,7 +23,7 @@ public class GangUiActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed() {
+    public void onBackPressed() { //브랜치 테스트좀해봄
         startActivity(new Intent(GangUiActivity.this, MainActivity.class));
         finish();
     }
