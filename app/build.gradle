@@ -36,6 +36,7 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-database:4.2.1'
     implementation 'com.google.firebase:firebase-core:16.0.1'
     implementation 'com.google.firebase:firebase-auth:16.0.3'
+    implementation 'com.google.firebase:firebase-database:16.0.1'
     //implementation 'com.google.firebase:firebase-database:15.0.0'
 
     implementation 'com.android.support:recyclerview-v7:27.+'
@@ -44,7 +45,9 @@ dependencies {
     implementation 'com.google.android.gms:play-services-location:16.0.0'
     implementation 'com.android.support:design:27.1.1'
 
-    implementation 'com.google.firebase:firebase-database:16.0.1'
+
+
+    implementation 'de.hdodenhof:circleimageview:2.2.0' // 채팅창 사용자표시 동그라미 쓰기위해서 외부 라이브러리 넣음.
 }
 
 apply plugin: 'com.google.gms.google-services'
