@@ -24,10 +24,7 @@ public class UserProfile {
 
 
     //과거 자바 handler처럼 캡슐화 쓰듯이 get과 set을 이용하여 각각의 값을 전달하거나 전달받음
-    public String getUserEmail() {
-        return userEmail;
-    }
-
+    public String getUserEmail() {return userEmail; }
     public void setUserEmail(String userEmail) {
         this.userEmail = userEmail;
     }
