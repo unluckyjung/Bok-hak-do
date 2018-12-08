@@ -27,13 +27,18 @@
         <activity android:name=".NewPostActivity" />
         <activity android:name=".PostDetailActivity" />
         <activity android:name=".BoardActivity" />
-        <activity android:name=".GangUiActivity" android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".GangUiActivity"
+            android:windowSoftInputMode="adjustNothing" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".StartActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".MapsActivity" android:label="Map" />
-        <activity android:name=".CalenderActivity"></activity>
+        <activity
+            android:name=".MapsActivity"
+            android:label="Map" />
+        <activity android:name=".CalenderActivity" />
+        <activity android:name=".ChatActivity"></activity>
     </application>
 
 </manifest>

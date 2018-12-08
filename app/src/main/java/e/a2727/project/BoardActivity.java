@@ -1,5 +1,6 @@
 package e.a2727.project;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -48,8 +49,8 @@ public class BoardActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //TIPS 구현 시 풀어주세요
-//                startActivity(new Intent(BoardActivity.this, TipsActivity.class));
-//                finish();
+                startActivity(new Intent(BoardActivity.this, ChatActivity.class));
+                finish();
             }
         });
 
