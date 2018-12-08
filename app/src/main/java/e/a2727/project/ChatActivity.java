@@ -35,6 +35,7 @@ public class ChatActivity extends AppCompatActivity {
 
 
     private String mUsername = "익명"; //이거 profile username가져와야함. 지금 자꾸 안되서 개빡침, 임시로 익명으로두고 테스트함
+    //지금 너도 한거보니까 Profile의 getUsername이랑 이런거 못떙겨 오고 그냥 firebase의 Datasnap샷 쓰더만, 이거 할줄알면 좀해주셈
 
 
 
