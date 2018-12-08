@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -21,6 +22,9 @@ import com.google.firebase.database.MutableData;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.Transaction;
 
+import e.a2727.project.BaseActivity;
+import e.a2727.project.CustomDialog;
+import e.a2727.project.FreeActivity;
 import e.a2727.project.PostDetailActivity;
 import e.a2727.project.R;
 import e.a2727.project.models.Post;
@@ -94,6 +98,17 @@ public abstract class PostListFragment extends Fragment {
                         Intent intent = new Intent(getActivity(), PostDetailActivity.class);
                         intent.putExtra(PostDetailActivity.EXTRA_POST_KEY, postKey);
                         startActivity(intent);
+                    }
+                });
+
+                //길게 누르면 Dialog를 통해 그 itemView에 대해 수정이나 삭제가 가능하게끔 함
+                viewHolder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View v) {
+                        final String userId = getUid();
+                        CustomDialog customDialog = new CustomDialog(getActivity());
+                        customDialog.callFunction(userId, mDatabase);
+                        return true;
                     }
                 });
 
