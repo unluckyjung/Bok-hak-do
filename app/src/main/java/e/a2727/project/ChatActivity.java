@@ -1,6 +1,7 @@
 package e.a2727.project;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -125,5 +126,9 @@ public class ChatActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         mfirebaseAdapter.stopListening();
+    }
+    public void onBackPressed() {
+        startActivity(new Intent(ChatActivity.this, BoardActivity.class));
+        finish();
     }
 }
