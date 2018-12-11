@@ -31,7 +31,6 @@ public class ChatActivity extends AppCompatActivity {
     public static final String MESSAGES_CHILD = "messages_child";
     private DatabaseReference mFirebaseDatabaseReference; //파이어베이스 DB접근용 객체
     private EditText mMessageEditText;
-    EditText etName;
 
 
 
