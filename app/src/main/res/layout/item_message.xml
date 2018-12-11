@@ -26,6 +26,7 @@
 
             <TextView
                 android:text="사용자 이름 표시 되는 부분"
+                android:textColor="#808080"
                 android:id="@+id/nameTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -35,6 +36,7 @@
 
             <TextView
                 android:text="메시지 표시 부분"
+                android:textColor="#ffffff"
                 android:id="@+id/messageTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
