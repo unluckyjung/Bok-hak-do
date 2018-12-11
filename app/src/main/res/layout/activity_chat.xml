@@ -20,6 +20,7 @@
 
         <EditText
             android:id="@+id/message_edit"
+            android:textColor="#ffffff"
             android:textColorHint="#ffffff"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
