@@ -1,6 +1,7 @@
 package e.a2727.project;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -35,8 +36,8 @@ public class ChatActivity extends AppCompatActivity {
 
 
 
-    private String mUsername = "익명";//이거 profile username가져와야함. 지금 자꾸 안되서 개빡침, 임시로 익명으로두고 테스트함
-    //지금 너도 한거보니까 Profile의 getUsername이랑 이런거 못떙겨 오고 그냥 firebase의 Datasnap샷 쓰더만, 이거 할줄알면 좀해주셈
+    private String mUsername = "익명";//대나무숲이니까 익명으로둠
+
 
 
 
@@ -125,5 +126,9 @@ public class ChatActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         mfirebaseAdapter.stopListening();
+    }
+    public void onBackPressed() {
+        startActivity(new Intent(ChatActivity.this, BoardActivity.class));
+        finish();
     }
 }
