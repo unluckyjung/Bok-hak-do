@@ -42,8 +42,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp">
 
-            ﻿
-
             <Spinner
                 android:id="@+id/spinner_lecture"
                 android:layout_width="wrap_content"
@@ -61,12 +59,12 @@
         </TableRow>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/search2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="275dp"
-            android:layout_marginRight="0dp"
+            android:layout_marginLeft="270dp"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="0dp"
             android:text="검색" />
     </LinearLayout>
 
@@ -83,7 +81,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/post"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
@@ -94,4 +92,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.971"
         app:layout_constraintStart_toStartOf="parent" />
+
 </android.support.constraint.ConstraintLayout>

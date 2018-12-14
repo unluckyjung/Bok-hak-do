@@ -107,7 +107,7 @@ public abstract class PostListFragment extends Fragment {
                     public boolean onLongClick(View v) {
                         final String userId = getUid();
                         CustomDialog customDialog = new CustomDialog(getActivity());
-                        customDialog.callFunction(userId, mDatabase);
+                        customDialog.callFunction(userId, mDatabase, postKey);
                         return true;
                     }
                 });
