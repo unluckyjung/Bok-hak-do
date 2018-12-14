@@ -39,10 +39,6 @@ public class ChatActivity extends AppCompatActivity {
     private String mUsername = "익명";//대나무숲이니까 익명으로둠
 
 
-
-
-
-
     public static class MessageViewHolder extends RecyclerView.ViewHolder{
         TextView nameTextView;
         TextView messageTextView;
