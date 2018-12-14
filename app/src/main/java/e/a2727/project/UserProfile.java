@@ -10,16 +10,17 @@ public class UserProfile {
     //유저 이름과 이메일을 대상으로 저장
     public String userName;
     public String userEmail;
+    public int userPoint;
 
     //아무것도 없으면 아무것도 없음
     public UserProfile(){
     }
 
     //그러나 Parameter를 저렇게 두 개 주면 두 개 입력해줌
-    public UserProfile(String userEmail, String userName) {
+    public UserProfile(String userEmail, String userName, int userpoint) {
         this.userEmail = userEmail;
         this.userName = userName;
-
+        this.userPoint = userpoint;
     }
 
 
