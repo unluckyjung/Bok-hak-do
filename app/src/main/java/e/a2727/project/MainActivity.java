@@ -53,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
         linearlayout3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //startActivity(new Intent(MainActivity.this, MapsActivity.class));
-                startActivity(new Intent(MainActivity.this, FileDownActivity.class)); //테스트하려고 임시로 해둔거임.
+                startActivity(new Intent(MainActivity.this, MapsActivity.class));
+                //startActivity(new Intent(MainActivity.this, FileDownActivity.class)); //테스트하려고 임시로 해둔거임.
                 finish();
             }
         });

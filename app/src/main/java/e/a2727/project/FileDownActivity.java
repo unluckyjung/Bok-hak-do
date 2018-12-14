@@ -68,7 +68,7 @@ public class FileDownActivity extends AppCompatActivity {
     }
 
     public void onBackPressed() {
-        startActivity(new Intent(FileDownActivity.this, BoardActivity.class)); //아까 게시판에서 부른거라서 BoardActivity로 돌아가게 해둔거임
+        startActivity(new Intent(FileDownActivity.this, GangUiActivity.class)); //아까 게시판에서 부른거라서 BoardActivity로 돌아가게 해둔거임
         finish();
     }
 }
