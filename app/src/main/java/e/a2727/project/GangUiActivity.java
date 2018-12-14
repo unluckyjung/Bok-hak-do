@@ -1,6 +1,7 @@
 package e.a2727.project;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
@@ -16,6 +17,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +32,7 @@ public class GangUiActivity extends AppCompatActivity {
     private ListView listView;
     private ArrayList<String> arraylist;
     private SearchAdapter adapter;
+    private ArrayList<String> data = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +40,11 @@ public class GangUiActivity extends AppCompatActivity {
         setContentView(R.layout.activity_gangui);
         post = findViewById(R.id.post);
         search = findViewById(R.id.search);
-        listView = (ListView) findViewById(R.id.listview);
+        listView = findViewById(R.id.listview);
 
         // 리스트를 생성한다.
         list = new ArrayList<String>();
+        data = new ArrayList<>();
 
         // 검색에 사용할 데이터을 미리 저장한다.
         settingList();
@@ -55,6 +59,20 @@ public class GangUiActivity extends AppCompatActivity {
         // 리스트뷰에 아답터를 연결한다.
         listView.setAdapter(adapter);
 
+        //리스트 뷰를 눌렀을 시의 이벤트를 진행한다.
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String a = arraylist.get(position);
+                //여기에다 if 하고 a == 하고싶은 이름 쓴 뒤 액티비티 연결하면 된다.
+                if(a == "장재우_기말고사_데이터베이스") {
+                    startActivity(new Intent(GangUiActivity.this, FileDownActivity.class));
+                    finish();
+                }
+            }
+        });
+
+        //올리기 버튼이다.
         post.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,6 +103,7 @@ public class GangUiActivity extends AppCompatActivity {
 
     }
 
+    //뒤로가기 버튼이다.
     @Override
     public void onBackPressed() { //브랜치 테스트좀해봄
         startActivity(new Intent(GangUiActivity.this, MainActivity.class));
@@ -119,7 +138,7 @@ public class GangUiActivity extends AppCompatActivity {
         adapter.notifyDataSetChanged();
     }
 
-    // 검색에 사용될 데이터를 리스트에 추가한다.
+    // 검색에 사용될 데이터를 리스트에 추가한다. 여기에 원하는 이름 작성하면 됨 ㄹㅇ
     private void settingList(){
         list.add("장재우_기말고사_데이터베이스");
         list.add("박지현");
