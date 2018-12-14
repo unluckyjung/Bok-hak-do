@@ -5,18 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#000000"
     tools:context=".FileDownActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="72dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="포인트 지급 후 정상적으로 확인하실 수 있습니다."
+        android:textColor="#ff0000"
+        android:textSize="17dp" />
+
     <ImageView
+        android:layout_gravity="center"
         android:id="@+id/ExamImage"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="wrap_content"
         />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <Button
-        android:id="@+id/button"
-        android:text="다운로드"
+        android:layout_gravity="bottom"
+        android:id="@+id/DownButton"
+        android:text="자료열람 (2Point)"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+    </LinearLayout>
 
 </LinearLayout>
