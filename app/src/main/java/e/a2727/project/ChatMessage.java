@@ -1,7 +1,6 @@
 package e.a2727.project;
 
 public class ChatMessage {
-    private String id;
     private String text;
     private String name;
 
@@ -11,15 +10,8 @@ public class ChatMessage {
     public ChatMessage(String text, String name){
         this.text = text;
         this.name = name;
-
     }
 
-    public String getId(){
-        return id;
-    }
-    public void setId(String id){
-        this.id = id;
-    }
 
     public String getText(){
         return text;

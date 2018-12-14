@@ -48,7 +48,6 @@ public class BoardActivity extends AppCompatActivity {
         linearlayout3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TIPS 구현 시 풀어주세요
                 startActivity(new Intent(BoardActivity.this, ChatActivity.class));
                 finish();
             }
