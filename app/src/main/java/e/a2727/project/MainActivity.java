@@ -1,6 +1,7 @@
 //로그인 성공 시 넘어오는 MainActivity. 별건 없고 로그인 성공 시 다시 뒤로 가려고 Logout 버튼만 구현해놓았다.
 package e.a2727.project;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         linearlayout2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 startActivity(new Intent(MainActivity.this, BoardActivity.class));
                 finish();
             }
@@ -51,7 +53,8 @@ public class MainActivity extends AppCompatActivity {
         linearlayout3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, MapsActivity.class));
+                //startActivity(new Intent(MainActivity.this, MapsActivity.class));
+                startActivity(new Intent(MainActivity.this, FileDownActivity.class)); //테스트하려고 임시로 해둔거임.
                 finish();
             }
         });

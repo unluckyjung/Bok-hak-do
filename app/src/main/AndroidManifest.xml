@@ -38,7 +38,8 @@
             android:name=".MapsActivity"
             android:label="Map" />
         <activity android:name=".CalenderActivity" />
-        <activity android:name=".ChatActivity"></activity>
+        <activity android:name=".ChatActivity" />
+        <activity android:name=".FileDownActivity"></activity>
     </application>
 
 </manifest>
