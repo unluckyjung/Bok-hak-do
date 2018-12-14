@@ -2,6 +2,7 @@
 package e.a2727.project;
 
 import android.content.Intent;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -29,6 +30,7 @@ public class RegistrationActivity extends AppCompatActivity {
     //이메일 가입 방식인데 user Name도 저장함. 나중에 profile 추가 하던가 해야겠음
     private EditText userName, userPassword, userEmail;
     private Button nextButton, back;
+    int point= 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +83,7 @@ public class RegistrationActivity extends AppCompatActivity {
                                         // Sign in success, update UI with the signed-in user's information
                                         Toast.makeText(RegistrationActivity.this, "Authentication Successful.",LENGTH_SHORT).show();
                                         sendEmailVerification(); //이메일 인증메일 전송과 함께 여기서 초기 창으로 넘어가게 해야함. why? 여기다 하면 바로 로그인되버림
-                                        sendUserData(email, username);
+                                        sendUserData(email, username, point);
                                         mAuth.signOut(); //바로 로그인 상태로 되므로 로그아웃 시켜줘야함
                                     } else {
                                         // If sign in fails, display a message to the user.
@@ -129,7 +131,7 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     //현재 이 부분 수정함. 각각의 유저 데이터를 따로 저장하여 게시판 사용 시 이용케 하려고 조금 변경함
-    private void sendUserData(String email, String Name){
+    private void sendUserData(String email, String Name, int point){
         //Firebase의 현재 instance 값 가져옴
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         //물론 유저가 누군지도 알아야 함
@@ -138,7 +140,7 @@ public class RegistrationActivity extends AppCompatActivity {
         //현재 참조하고 있는 데이터베이스를 가져옴
         DatabaseReference myRef = firebaseDatabase.getReference();
         //Userprofile에서 선언한 것과 같이 email과 유저 이름 준비
-        UserProfile userProfile = new UserProfile(email, Name);
+        UserProfile userProfile = new UserProfile(email, Name, point);
         //이후 데이터베이스에 아래의 경로와 같이 갖다 넣음
         myRef.child("users").child(firebaseUser.getUid()).setValue(userProfile);
     }
