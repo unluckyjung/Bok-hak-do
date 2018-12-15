@@ -72,11 +72,8 @@ public class CustomDialog {
     }
 
     private void DeletePost(String userId, DatabaseReference mDatabase, String key) {
-        // Create new post at /user-posts/$userid/$postid and at
-        // /posts/$postid simultaneously
 
         Log.e(TAG, key);
-//        Query deleteQuery = mDatabase.child("posts").equalTo(key);
 
         mDatabase.child("posts").child(key).getRef().removeValue();
 
@@ -88,18 +85,7 @@ public class CustomDialog {
             mDatabase.child("post-comments").child(key).getRef().removeValue();
         }
 
-//        deleteQuery.addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                for (DataSnapshot delSnapshot: dataSnapshot.getChildren()) {
-//                    delSnapshot.getRef().setValue(null);
-//                }
-//            }
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//                Log.e(TAG, "onCancelled", databaseError.toException());
-//            }
-//        });
+
 
 
     }

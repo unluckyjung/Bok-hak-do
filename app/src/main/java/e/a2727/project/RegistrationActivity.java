@@ -27,10 +27,9 @@ public class RegistrationActivity extends AppCompatActivity {
 
     //회원가입 시 firebase 내 데이터 전송 및 받기 위해 사용
     private FirebaseAuth mAuth;
-    //이메일 가입 방식인데 user Name도 저장함. 나중에 profile 추가 하던가 해야겠음
     private EditText userName, userPassword, userEmail;
     private Button nextButton, back;
-    int point= 10;
+    int point= 10; // 계정생성시 초기포인트 10점지급
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
