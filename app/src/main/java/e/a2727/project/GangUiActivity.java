@@ -140,33 +140,22 @@ public class GangUiActivity extends AppCompatActivity {
 
     // 검색에 사용될 데이터를 리스트에 추가한다. 여기에 원하는 이름 작성하면 됨 ㄹㅇ
     private void settingList(){
-        list.add("장재우_기말고사_데이터베이스");
-        list.add("박지현");
-        list.add("수지");
+        list.add("장재우_2017_데이터베이스중간");
+        list.add("장재우_기말고사_데이터베이스2016");
+        list.add("장재우_중말고사_데이터베이스");
+        list.add("장재우_중간고사_알고리즘");
+        list.add("장재우_기말고사_알고리즘");
         list.add("안계현_모바일_프로그래밍");
-        list.add("하성운");
-        list.add("황지원_컴퓨터_구조설계");
-        list.add("강승윤");
-        list.add("손나은");
-        list.add("남주혁");
-        list.add("홍득조_보안이론_기말");
-        list.add("진영");
+        list.add("황지원_중간고사_컴퓨터구조설계");
+        list.add("황지원_기말고사_컴퓨터구조설계");
+        list.add("홍득조_보안이론_중말");
+        list.add("홍득조_정보이론_중말");
         list.add("안동언_프로그래밍_언어");
-        list.add("김영천_컴퓨터_네트워크");
-        list.add("조희승_시스템_프로그래밍");
+        list.add("김영천_기말고사_컴퓨터네트워크");
+        list.add("조희승_중간고사_시스템프로그래밍");
+        list.add("곽영태_선형대수학_기말");
         list.add("곽영태_수치해석_기말");
-        list.add("공명");
-        list.add("김예림");
-        list.add("혜리");
-        list.add("웬디");
-        list.add("박혜수");
-        list.add("카이");
-        list.add("진세연");
-        list.add("동호");
-        list.add("박세완");
-        list.add("도희");
-        list.add("창모");
-        list.add("허영지");
+
     }
 
 }
