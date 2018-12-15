@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
         linearlayout1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //강의 class 구현 시 풀어주세요
                 startActivity(new Intent(MainActivity.this, GangUiActivity.class));
                 finish();
             }
@@ -44,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         linearlayout2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 startActivity(new Intent(MainActivity.this, BoardActivity.class));
                 finish();
             }
@@ -54,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, MapsActivity.class));
-                //startActivity(new Intent(MainActivity.this, FileDownActivity.class)); //테스트하려고 임시로 해둔거임.
                 finish();
             }
         });

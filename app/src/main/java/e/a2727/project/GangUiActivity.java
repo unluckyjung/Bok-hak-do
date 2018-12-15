@@ -105,7 +105,7 @@ public class GangUiActivity extends AppCompatActivity {
 
     //뒤로가기 버튼이다.
     @Override
-    public void onBackPressed() { //브랜치 테스트좀해봄
+    public void onBackPressed() {
         startActivity(new Intent(GangUiActivity.this, MainActivity.class));
         finish();
     }
@@ -138,7 +138,7 @@ public class GangUiActivity extends AppCompatActivity {
         adapter.notifyDataSetChanged();
     }
 
-    // 검색에 사용될 데이터를 리스트에 추가한다. 여기에 원하는 이름 작성하면 됨 ㄹㅇ
+    // 검색에 사용될 데이터를 리스트에 추가한다. 여기에 원하는 이름 작성하면 됨
     private void settingList(){
         list.add("장재우_2017_알고리즘2차");
         list.add("장재우_2017_자료구조2차");

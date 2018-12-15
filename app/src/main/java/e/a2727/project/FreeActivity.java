@@ -75,14 +75,13 @@ public class FreeActivity extends BaseActivity {
         });
     }
 
-    //옵션 메뉴라고는 하는데 어디있는거임?
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
-    //로그아웃 버튼 클릭 시 맨 처음 페이지로 돌아가게 하는데 어디있는 건지는 나도 잘 모름
+    //로그아웃 버튼 클릭 시 맨 처음 페이지로 돌아가게 하는기능
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int i = item.getItemId();
@@ -96,7 +95,7 @@ public class FreeActivity extends BaseActivity {
         }
     }
 
-    //뒤로가기 하면 바로꺼지길래 뒤로가기 넣어둠
+
     public void onBackPressed() {
         startActivity(new Intent(FreeActivity.this, BoardActivity.class));
         finish();
