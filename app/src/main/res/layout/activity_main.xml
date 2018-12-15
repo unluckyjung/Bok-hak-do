@@ -42,7 +42,7 @@
                 android:id="@+id/imageView1"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/강의자료" />
+                app:srcCompat="@drawable/gang" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -86,7 +86,7 @@
                 android:id="@+id/imageView2"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/게시판" />
+                app:srcCompat="@drawable/gae" />
 
             <TextView
                 android:id="@+id/textView4"
@@ -134,7 +134,7 @@
                 android:id="@+id/imageView3"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/지도" />
+                app:srcCompat="@drawable/gi" />
 
             <TextView
                 android:id="@+id/textView6"
