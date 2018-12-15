@@ -19,7 +19,7 @@ public class Jang extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Jang.this, BoardActivity.class));
+                startActivity(new Intent(Jang.this, ProfessorActivity.class));
                 finish();
             }
         });
