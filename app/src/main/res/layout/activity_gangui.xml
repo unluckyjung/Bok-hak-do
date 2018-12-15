@@ -44,6 +44,7 @@
             android:layout_marginTop="15dp">
 
             <EditText
+                android:hint="교수명_연도_수업명 순으로 입력해 주세요"
                 android:id="@+id/search"
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"

@@ -65,7 +65,7 @@ public class GangUiActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String a = arraylist.get(position);
                 //여기에다 if 하고 a == 하고싶은 이름 쓴 뒤 액티비티 연결하면 된다.
-                if(a == "장재우_기말고사_데이터베이스") {
+                if(a == "장재우_2017_알고리즘2차") {
                     startActivity(new Intent(GangUiActivity.this, FileDownActivity.class));
                     finish();
                 }
@@ -140,21 +140,22 @@ public class GangUiActivity extends AppCompatActivity {
 
     // 검색에 사용될 데이터를 리스트에 추가한다. 여기에 원하는 이름 작성하면 됨 ㄹㅇ
     private void settingList(){
-        list.add("장재우_2017_데이터베이스중간");
-        list.add("장재우_기말고사_데이터베이스2016");
-        list.add("장재우_중말고사_데이터베이스");
-        list.add("장재우_중간고사_알고리즘");
-        list.add("장재우_기말고사_알고리즘");
-        list.add("안계현_모바일_프로그래밍");
-        list.add("황지원_중간고사_컴퓨터구조설계");
-        list.add("황지원_기말고사_컴퓨터구조설계");
-        list.add("홍득조_보안이론_중말");
-        list.add("홍득조_정보이론_중말");
-        list.add("안동언_프로그래밍_언어");
-        list.add("김영천_기말고사_컴퓨터네트워크");
-        list.add("조희승_중간고사_시스템프로그래밍");
-        list.add("곽영태_선형대수학_기말");
-        list.add("곽영태_수치해석_기말");
+        list.add("장재우_2017_알고리즘2차");
+        list.add("장재우_2017_자료구조2차");
+        list.add("장재우_2016_데이터베이스2차");
+        list.add("홍득조_2017_정보이론중간");
+        list.add("홍득조_2017_정보이론기말");
+        list.add("홍득조_2017_보안이론중간");
+        list.add("안계현_2016_데이터통신중간");
+        list.add("안계현_2016_데이터통신기말");
+        list.add("조희승_2015_시스템프로그래밍중간");
+        list.add("조희승_2015_시스템프로그래밍기말");
+        list.add("조희승_2017_운영체제중간");
+        list.add("조희승_2017_운영체제기말");
+        list.add("곽영태_2016_선형대수학중간");
+        list.add("곽영태_2015_선형대수학기말");
+        list.add("곽영태_2017_수차해석중간");
+        list.add("곽영태_2017_수치해석기말");
 
     }
 
