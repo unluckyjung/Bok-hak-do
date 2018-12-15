@@ -41,7 +41,9 @@
         <activity android:name=".CalenderActivity" />
         <activity android:name=".ChatActivity" />
         <activity android:name=".FileDownActivity" />
-        <activity android:name=".ProfessorActivity"></activity>
+        <activity android:name=".ProfessorActivity"
+            android:windowSoftInputMode="adjustNothing"/>
+        <activity android:name=".Jang"/>
     </application>
 
 </manifest>

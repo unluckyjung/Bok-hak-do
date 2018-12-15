@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 
 public class BoardActivity extends AppCompatActivity {
 
-    private LinearLayout linearlayout1, linearlayout2, linearlayout3;
+    private LinearLayout linearlayout1, linearlayout2, linearlayout3, linearlayout4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +20,7 @@ public class BoardActivity extends AppCompatActivity {
         linearlayout1 = findViewById(R.id.linearLayout1);
         linearlayout2 = findViewById(R.id.linearLayout2);
         linearlayout3 = findViewById(R.id.linearLayout3);
+        linearlayout4 = findViewById(R.id.linearLayout4);
 
         linearlayout1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +50,14 @@ public class BoardActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(BoardActivity.this, ChatActivity.class));
+                finish();
+            }
+        });
+
+        linearlayout4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(BoardActivity.this, ProfessorActivity.class));
                 finish();
             }
         });
