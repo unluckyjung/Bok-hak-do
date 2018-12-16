@@ -31,7 +31,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps2);
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map); //activity2 레이아웃의 Flagment가져옴
         mapFragment.getMapAsync(this); //구글맵이 준비가 되었을경우 onMapReady 호출됨
@@ -43,7 +42,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap; //구글 맵 객체가 들어옴
 
-        // Add a marker in Sydney and move the camera
         LatLng jbnu = new LatLng(35.8468552, 127.1296769);
         //LatLng는 위, 경도를 표현하는 객체. 구글 라이브러리 사용한것.
         mMap.addMarker(new MarkerOptions().position(jbnu).title("전북대학교")); //JBNU에 마커박고. "전북대학교" 띄움

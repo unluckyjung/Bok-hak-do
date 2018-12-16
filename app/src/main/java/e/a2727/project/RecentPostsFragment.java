@@ -12,12 +12,9 @@ public class RecentPostsFragment extends PostListFragment {
     //최근에 글 쓴 것들을 모으는 쿼리이다. 간단하다
     @Override
     public Query getQuery(DatabaseReference databaseReference) {
-        // [START recent_posts_query]
-        // Last 100 posts, these are automatically the 100 most recent
-        // due to sorting by push() keys
+
         Query recentPostsQuery = databaseReference.child("posts")
                 .limitToFirst(100);
-        // [END recent_posts_query]
 
         return recentPostsQuery;
     }

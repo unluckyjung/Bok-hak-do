@@ -19,9 +19,7 @@ import e.a2727.project.models.Post;
 
 import static android.support.constraint.Constraints.TAG;
 
-/**
- * Created by Administrator on 2017-08-07.
- */
+
 
 public class CustomDialog {
 

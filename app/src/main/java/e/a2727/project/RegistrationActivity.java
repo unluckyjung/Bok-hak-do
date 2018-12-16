@@ -60,7 +60,7 @@ public class RegistrationActivity extends AppCompatActivity {
             }
         });
 
-        //여기가 존나 중요함. Register 버튼을 눌렀을 때 작동함
+        //Register 버튼을 눌렀을 때 작동함
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,7 +99,7 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed() { //킹갓 뒤로가기
+    public void onBackPressed() {
         startActivity(new Intent(RegistrationActivity.this, StartActivity.class));
         finish();
     }
@@ -129,7 +129,7 @@ public class RegistrationActivity extends AppCompatActivity {
         }
     }
 
-    //현재 이 부분 수정함. 각각의 유저 데이터를 따로 저장하여 게시판 사용 시 이용케 하려고 조금 변경함
+    //각각의 유저 데이터를 따로 저장하여 게시판 사용 시 이용케 하려고 조금 변경함
     private void sendUserData(String email, String Name, int point){
         //Firebase의 현재 instance 값 가져옴
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();

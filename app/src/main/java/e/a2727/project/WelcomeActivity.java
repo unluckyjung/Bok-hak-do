@@ -1,4 +1,3 @@
-//맨 처음 초기 화면 나오기 전에 잠깐 보여지는 화면이다. 나중에 디자인 설정 필요
 package e.a2727.project;
 
 import android.content.Intent;

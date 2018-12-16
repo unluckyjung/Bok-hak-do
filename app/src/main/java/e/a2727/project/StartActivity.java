@@ -25,7 +25,7 @@ public class StartActivity extends AppCompatActivity {
         btnToLogin = (Button)findViewById(R.id.btnToLogin);
         btnToSignUp = (Button)findViewById(R.id.btnToSignUp);
 
-        //여기서는 Login 체크만 하려고 firebase 내 현재 유저 받아와서 로그인만 체크함
+        //여기서는 Login 체크만 하려고 firebase 내 현재 유저 받아와서 로그인만 체크
         firebaseAuth = FirebaseAuth.getInstance();
 
         FirebaseUser user = firebaseAuth.getCurrentUser();

@@ -15,9 +15,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-/**
- * Created by Administrator on 2017-08-07.
- */
+
 
 public class CustomDialog2 {
 

@@ -26,7 +26,6 @@ public class BoardActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //startActivity(new Intent(BoardActivity.this, CalenderActivity.class));
-                //일단 냄겨는둠 아무기능도 없는 캘린더뷰 띄우는거, 일단 레이아웃도 냄겨놧음
                 //finish();
                 Uri calendarUri = CalendarContract.CONTENT_URI //구글 캘린더 띄우기
                         .buildUpon()

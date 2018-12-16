@@ -56,13 +56,12 @@ public class PostDetailActivity extends BaseActivity implements View.OnClickList
             throw new IllegalArgumentException("Must pass EXTRA_POST_KEY");
         }
 
-        // Initialize Database
+        // 데이터 베이스 설정
         mPostReference = FirebaseDatabase.getInstance().getReference()
                 .child("posts").child(mPostKey);
         mCommentsReference = FirebaseDatabase.getInstance().getReference()
                 .child("post-comments").child(mPostKey);
 
-        // Initialize Views
         mAuthorView = findViewById(R.id.postAuthor);
         mTitleView = findViewById(R.id.postTitle);
         mBodyView = findViewById(R.id.postBody);
@@ -79,28 +78,22 @@ public class PostDetailActivity extends BaseActivity implements View.OnClickList
     public void onStart() {
         super.onStart();
 
-        // Add value event listener to the post
-        // [START post_value_event_listener]
+
         ValueEventListener postListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                // Get Post object and use the values to update the UI
                 Post post = dataSnapshot.getValue(Post.class);
-                // [START_EXCLUDE]
                 mAuthorView.setText(post.author);
                 mTitleView.setText(post.title);
                 mBodyView.setText(post.body);
-                // [END_EXCLUDE]
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                // Getting Post failed, log a message
-                Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
-                // [START_EXCLUDE]
-                Toast.makeText(PostDetailActivity.this, "Failed to load post.",
+                // 포스트를 불러오는것에 실패하면 메시지를 출력한다.
+                Log.w(TAG, "포스트 로딩이 취소되었습니다.", databaseError.toException());
+                Toast.makeText(PostDetailActivity.this, "포스트를 가져오지 못했습니다.",
                         Toast.LENGTH_SHORT).show();
-                // [END_EXCLUDE]
             }
         };
         mPostReference.addValueEventListener(postListener);
@@ -118,12 +111,10 @@ public class PostDetailActivity extends BaseActivity implements View.OnClickList
     public void onStop() {
         super.onStop();
 
-        // Remove post value event listener
         if (mPostListener != null) {
             mPostReference.removeEventListener(mPostListener);
         }
 
-        // Clean up comments listener
         mAdapter.cleanupListener();
     }
 
@@ -141,18 +132,18 @@ public class PostDetailActivity extends BaseActivity implements View.OnClickList
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        // Get user information
+                        // 유저 정보 가져오기
                         UserProfile user = dataSnapshot.getValue(UserProfile.class);
                         String authorName = user.userName;
 
-                        // Create new comment object
+                        // 새로운 코멘트를 만든다
                         String commentText = mCommentField.getText().toString();
                         Comment comment = new Comment(uid, authorName, commentText);
 
-                        // Push the comment, it will appear in the list
+                        // 코멘트를 넣고 보이게해준다.
                         mCommentsReference.push().setValue(comment);
 
-                        // Clear the field
+                        // 필드를 지운다.
                         mCommentField.setText(null);
                     }
 
@@ -189,93 +180,76 @@ public class PostDetailActivity extends BaseActivity implements View.OnClickList
             mContext = context;
             mDatabaseReference = ref;
 
-            // Create child event listener
-            // [START child_event_listener_recycler]
+
             ChildEventListener childEventListener = new ChildEventListener() {
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String previousChildName) {
                     Log.d(TAG, "onChildAdded:" + dataSnapshot.getKey());
 
-                    // A new comment has been added, add it to the displayed list
+                    // 새 코멘트를 추가하고 리스트에 띄움
                     Comment comment = dataSnapshot.getValue(Comment.class);
 
-                    // [START_EXCLUDE]
-                    // Update RecyclerView
                     mCommentIds.add(dataSnapshot.getKey());
                     mComments.add(comment);
                     notifyItemInserted(mComments.size() - 1);
-                    // [END_EXCLUDE]
                 }
 
                 @Override
                 public void onChildChanged(DataSnapshot dataSnapshot, String previousChildName) {
                     Log.d(TAG, "onChildChanged:" + dataSnapshot.getKey());
 
-                    // A comment has changed, use the key to determine if we are displaying this
-                    // comment and if so displayed the changed comment.
                     Comment newComment = dataSnapshot.getValue(Comment.class);
                     String commentKey = dataSnapshot.getKey();
 
-                    // [START_EXCLUDE]
                     int commentIndex = mCommentIds.indexOf(commentKey);
                     if (commentIndex > -1) {
-                        // Replace with the new data
                         mComments.set(commentIndex, newComment);
 
-                        // Update the RecyclerView
                         notifyItemChanged(commentIndex);
                     } else {
                         Log.w(TAG, "onChildChanged:unknown_child:" + commentKey);
                     }
-                    // [END_EXCLUDE]
                 }
 
                 @Override
                 public void onChildRemoved(DataSnapshot dataSnapshot) {
                     Log.d(TAG, "onChildRemoved:" + dataSnapshot.getKey());
 
-                    // A comment has changed, use the key to determine if we are displaying this
-                    // comment and if so remove it.
+                    // 코멘트가 변경되었으며 키를 사용하여 이 내용을 표시하는지 확인
                     String commentKey = dataSnapshot.getKey();
 
-                    // [START_EXCLUDE]
                     int commentIndex = mCommentIds.indexOf(commentKey);
                     if (commentIndex > -1) {
-                        // Remove data from the list
+                        // 리스트에서 데이터 삭제
                         mCommentIds.remove(commentIndex);
                         mComments.remove(commentIndex);
 
-                        // Update the RecyclerView
+                        // 리사이클뷰 업데이트
                         notifyItemRemoved(commentIndex);
                     } else {
                         Log.w(TAG, "onChildRemoved:unknown_child:" + commentKey);
                     }
-                    // [END_EXCLUDE]
                 }
 
                 @Override
                 public void onChildMoved(DataSnapshot dataSnapshot, String previousChildName) {
                     Log.d(TAG, "onChildMoved:" + dataSnapshot.getKey());
 
-                    // A comment has changed position, use the key to determine if we are
-                    // displaying this comment and if so move it.
+
                     Comment movedComment = dataSnapshot.getValue(Comment.class);
                     String commentKey = dataSnapshot.getKey();
 
-                    // ...
                 }
 
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
-                    Log.w(TAG, "postComments:onCancelled", databaseError.toException());
-                    Toast.makeText(mContext, "Failed to load comments.",
+                    Log.w(TAG, "포스트 로딩이 취소되었습니다.", databaseError.toException());
+                    Toast.makeText(mContext, "포스트를 가져오지 못했습니다.",
                             Toast.LENGTH_SHORT).show();
                 }
             };
             ref.addChildEventListener(childEventListener);
-            // [END child_event_listener_recycler]
 
-            // Store reference to listener so it can be removed on app stop
             mChildEventListener = childEventListener;
         }
 
