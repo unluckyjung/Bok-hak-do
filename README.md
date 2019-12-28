@@ -9,3 +9,9 @@ It is Proto type but maybe modification in the future
 exam data, bulletin boards, maps, etc. are provided.
 
 [Application Demonstration Video](https://youtu.be/jI7TBKFYb6w)
+
+---
+
+* Andriod Studio.
+* Java.
+* FIrebase
