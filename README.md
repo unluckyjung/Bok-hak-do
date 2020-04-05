@@ -12,6 +12,6 @@ exam data, bulletin boards, maps, etc. are provided.
 
 ---
 
-* Andriod Studio.
+* Android Studio.
 * Java.
 * FIrebase
